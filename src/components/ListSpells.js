@@ -2,6 +2,8 @@ import React from 'react'
 import axios from 'axios'
 import SpellCard from './SpellCard'
 
+import "./listSpells.css"
+
 const baseUrl = 'https://www.dnd5eapi.co'
 
 class ListSpells extends React.Component {
