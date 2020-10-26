@@ -10,6 +10,18 @@ const FullSpellCard = ({spell}) => {
       <p>{spell.duration}</p>
       <p>Range</p>
       <p>{spell.range}</p>
+      <p>Material</p>
+      <p>{spell.material}</p>
+      <p>Component</p>
+      <p>{spell.components.map(text => {
+        return `${text} `
+      })}</p>
+      <p>Description</p>
+      <p>{spell.desc.map(text => {
+        return `${text} `
+      })}</p>
+      <p>School</p>
+      <p>{spell.school.name}</p>
     </div>
   )
 }
