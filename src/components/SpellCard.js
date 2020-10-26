@@ -8,9 +8,7 @@ const baseUrl = 'https://www.dnd5eapi.co'
 
 class SpellCard extends React.Component {
 
-  state = {
-    spell:{}
-  }
+  state = {}
 
   componentDidMount() {
     this.fetchData()
@@ -28,7 +26,12 @@ class SpellCard extends React.Component {
     return (
       <div className="CardSpell">
         <h2>{spell && spell.name}</h2>
-        <p>{spell && spell.desc}</p>
+        {spell && 
+          <div className="cardSpell-description">
+            <h3> Description</h3>
+            <p>{spell && spell.desc}</p>
+          </div>
+        }
       </div>
     )
   }
