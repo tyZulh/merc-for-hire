@@ -5,6 +5,11 @@ const baseUrl = 'https://www.dnd5eapi.co'
 
 class ListSpells extends React.Component {
 
+  
+  componentDidMount() {
+    this.fetchData()
+  }
+
   fetchData = async () => {
     const resp = await axios.get(`${baseUrl}/api/spells`)
     this.setState({spells : resp.data.result})
