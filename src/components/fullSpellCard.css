@@ -1,5 +1,5 @@
 .fullSpellCard {
-  position: absolute;
+  position: fixed;
   background-color: whitesmoke;
   width: 50vw;
   height: 75vh;
@@ -7,8 +7,15 @@
   left: calc(25vw - 1rem);
   z-index: 999;
   padding: 0 1rem;
-  overflow-y: overlay;
+  overflow-y: auto;
   scrollbar-width: none;
+}
+
+.fullSpellCard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width : 50vw;
 }
 
 .fullSpellCard::-webkit-scrollbar {

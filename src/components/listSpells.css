@@ -2,4 +2,15 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  height: 100vh;
+  width: 100vw;
+  overflow: auto;
+  scrollbar-width: none;
+}
+
+.listSpells::-webkit-scrollbar {
+  display: none;
+}
+.overlay {
+  overflow: hidden;
 }

@@ -1,12 +1,17 @@
- import "./fullSpellCard.css"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTimes } from '@fortawesome/free-solid-svg-icons'
+import "./fullSpellCard.css"
 
-const FullSpellCard = ({spell}) => {
+const FullSpellCard = ({display, spell}) => {
   return(
     <div className='fullSpellCard' >
-      <h2 className='fullSpellCard-title'>{spell.name}</h2>
+      <div className='fullSpellCard-header'>
+        <h2 className='fullSpellCard-title'>{spell.name}</h2>
+        <FontAwesomeIcon icon={faTimes} onClick={()=>display(null)}/>
+      </div>
       
       <div className='fullSpellCard-info'>
-        <p className='fullSpellCard-info-title'>Casting time : </p>
+        <p className='fullSpellCard-info-title'>Casting time :</p>
         <p className=''>{spell.casting_time}</p>
       </div>
 
@@ -22,7 +27,7 @@ const FullSpellCard = ({spell}) => {
 
       <div className='fullSpellCard-info'>
         <p className='fullSpellCard-info-title'>Material : </p>
-        <p className=''>{spell.material}</p>
+        <p className=''>{spell.material ? spell.material : `none`}</p>
       </div>
 
       <div className='fullSpellCard-info'>
@@ -33,15 +38,15 @@ const FullSpellCard = ({spell}) => {
       </div>
 
       <div className='fullSpellCard-info'>
+        <p className='fullSpellCard-info-title'>School : </p>
+        <p className=''>{spell.school.name}</p>
+      </div>
+
+      <div className='fullSpellCard-info'>
         <p className='fullSpellCard-info-title'>Description : </p>
         <p className='fullSpellCard-info-text'>{spell.desc.map(text => {
           return `${text} `
         })}</p>
-      </div>
-
-      <div className='fullSpellCard-info'>
-        <p className='fullSpellCard-info-title'>School : </p>
-        <p className=''>{spell.school.name}</p>
       </div>
     </div>
   )

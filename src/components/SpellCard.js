@@ -3,7 +3,6 @@ import React from "react";
 import axios from "axios"
 
 import "./spellCard.css"
-import FullSpellCard from "./FullSpellCard";
 
 const baseUrl = 'https://www.dnd5eapi.co'
 
@@ -21,22 +20,13 @@ class SpellCard extends React.Component {
   }
 
   displayFullCard = () => {
-    this.setState({ displayFullCard: !this.state.displayFullCard})
+    this.props.displayFullCard(this.state.spell)
   }
 
   render() {
     const spell = this.state.spell
-    console.log(spell);
     return (
       <div className="cardSpell" onClick={this.displayFullCard}>
-        {this.state.displayFullCard &&
-          <FullSpellCard spell={this.state.spell} display={this.displayFullCard}/>
-        }
-        {
-          this.state.displayFullCard &&
-          <div className="cardSpell-display-overlay">
-          </div>
-        }
         <h2>{spell && spell.name}</h2>
         {spell &&
           <div className="cardSpell-description">

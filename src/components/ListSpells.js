@@ -23,10 +23,10 @@ class ListSpells extends React.Component {
 
   render() {
     return (
-      <div className='listSpells'>
+      <div className={this.props.overlay ? "listSpells overlay" : "listSpells"}>
         {this.state.spells && this.state.spells.map(spell => {
           return(
-            <SpellCard url = {spell.url} />
+            <SpellCard url = {spell.url} displayFullCard={this.props.displayFullCard}/>
           )
         })}
       </div>
