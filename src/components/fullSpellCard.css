@@ -1,0 +1,31 @@
+.fullSpellCard {
+  position: absolute;
+  background-color: whitesmoke;
+  width: 50vw;
+  height: 75vh;
+  top: 12.5vh;
+  left: calc(25vw - 1rem);
+  z-index: 999;
+  padding: 0 1rem;
+  overflow-y: overlay;
+  scrollbar-width: none;
+}
+
+.fullSpellCard::-webkit-scrollbar {
+  display: none;
+}
+
+.fullSpellCard-info {
+  border-top: 1px grey solid;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.fullSpellCard-info-title {
+  padding-right: 4px;
+  margin-bottom: 6px;
+}
+
+.fullSpellCard-info-text {
+  margin: 0 6px;
+}
